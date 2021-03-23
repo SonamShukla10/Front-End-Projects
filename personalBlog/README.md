@@ -30,3 +30,6 @@ ______________
 
 References:
 ________________
+In addition to the Udacity course materials, I got helpful tips for creating this website from the following articles and resources:
+. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox#the_two_axes_of_flexbox
+. https://htmlcolorcodes.com/ helped me pick my color palette.
