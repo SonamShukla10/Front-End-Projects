@@ -26,6 +26,9 @@ ____________
 <img width="1029" alt="Screen Shot 2021-03-24 at 3 01 43 PM" src="https://user-images.githubusercontent.com/48238169/112389550-281d2c80-8cb2-11eb-8a1b-05d171d69e4d.png">
 
 
+<img width="566" alt="Screen Shot 2021-03-24 at 3 10 30 PM" src="https://user-images.githubusercontent.com/48238169/112390198-24d67080-8cb3-11eb-9f66-97a6d30b1937.png">
+
+
 
 Mobile View:
 ______________
