@@ -38,7 +38,7 @@
     }
 
     .flex-container {
-      display: "flex";
+      display: flex;
       align-content: "center";
       flex-direction: "row";
 }
