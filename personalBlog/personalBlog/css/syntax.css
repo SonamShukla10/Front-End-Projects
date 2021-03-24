@@ -1,81 +1,80 @@
 /* Mobile first */
-.container{
-  display:grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 250px 600px;
-  border: 2px solid grey;
+.container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 250px 600px;
+    border: 2px solid grey;
     /* Use grid-template-area to create a mobile layout where each named space occupies its own row */
-  grid-template-areas:
-  "hd"
-  "sd"
-  "main"
-  "ft";
-  }
+    grid-template-areas:
+        "hd"
+        "sd"
+        "main"
+        "ft";
+}
 
 .col {
-  font-weight: bold;
-  font-style: italic;
+    font-weight: bold;
+    font-style: italic;
 }
 
-  .quote{
+.quote {
     color: green;
-  }
+}
 
-.box{
-    border: 1px solid #D7BDE2;
-    background: #D7BDE2;
-    }
+.box {
+    border: 1px solid #d7bde2;
+    background: #d7bde2;
+}
 
-    .col{
-      color: orange;
-    }
+.col {
+    color: orange;
+}
 
 .unorder {
-  color: cyan;
+    color: cyan;
 }
-    .unorder:hover{
-      color: #fc2003;
-    }
-
-    .flex-container {
-      display: flex;
-      align-content: "center";
-      flex-direction: "row";
+.unorder:hover {
+    color: #fc2003;
 }
 
-    .white-section {
-      background-color: skyblue;
-    }
+.flex-container {
+    display: flex;
+    align-content: "center";
+    flex-direction: "row";
+}
 
+.white-section {
+    background-color: skyblue;
+}
 
-  .image{
+.image {
     height: 250px;
     width: 1102px;
-  }
+}
 
-  .header{
-    grid-area:hd;
-  }
-  .footer{
+.header {
+    grid-area: hd;
+}
+.footer {
     grid-area: ft;
-  }
-  .sidebar{
+}
+.sidebar {
     grid-area: sd;
-  }
-  .content{
+}
+.content {
     grid-area: main;
-  }
+}
 
 /* If Screen Is Wide Enough */
-@media(min-width:900px){
-.container{
-      display:grid;
-      grid-template-columns: 300px 300px 300px;
-      grid-template-rows: 300px 600px;
-      grid-template-areas:
-      "hd hd hd hd hd hd hd hd"
-      "sd sd main main main main main main"
-      "ft ft ft ft ft ft ft ft";
-      border: 2px solid grey;
-  }
+@media (min-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: 300px 600px;
+        grid-template-areas:
+            "hd hd hd hd hd hd hd hd"
+            "sd sd main main main main main main"
+            "ft ft ft ft ft ft ft ft";
+        border: 2px solid grey;
+    }
 }
