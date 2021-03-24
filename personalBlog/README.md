@@ -11,21 +11,27 @@ This project requires you to utilize your HTML and CSS skills to build out a per
 
 Preview:
 ____________
-![Screen Shot 2021-03-23 at 3 32 15 PM](https://user-images.githubusercontent.com/48238169/112227659-3bb28f80-8bed-11eb-9549-0a555fc03e15.png)
+<img width="1212" alt="Screen Shot 2021-03-24 at 3 00 38 PM" src="https://user-images.githubusercontent.com/48238169/112389515-150a5c80-8cb2-11eb-8d57-b3ee60c32974.png">
 
 
 
-![Screen Shot 2021-03-23 at 3 32 51 PM](https://user-images.githubusercontent.com/48238169/112227668-40774380-8bed-11eb-8de0-fa889d77cc10.png)
+
+<img width="1262" alt="Screen Shot 2021-03-24 at 3 00 49 PM" src="https://user-images.githubusercontent.com/48238169/112389526-1b98d400-8cb2-11eb-8cc3-6440f16f0e9d.png">
 
 
-![Screen Shot 2021-03-23 at 3 33 00 PM](https://user-images.githubusercontent.com/48238169/112227677-440aca80-8bed-11eb-940f-93a11eb65cb5.png)
+
+<img width="1303" alt="Screen Shot 2021-03-24 at 3 01 24 PM" src="https://user-images.githubusercontent.com/48238169/112389537-218eb500-8cb2-11eb-9e74-2a7ae1c260b0.png">
+
+
+<img width="1029" alt="Screen Shot 2021-03-24 at 3 01 43 PM" src="https://user-images.githubusercontent.com/48238169/112389550-281d2c80-8cb2-11eb-8a1b-05d171d69e4d.png">
 
 
 
 Mobile View:
 ______________
 
-<img width="617" alt="Screen Shot 2021-03-23 at 3 33 28 PM" src="https://user-images.githubusercontent.com/48238169/112227707-4bca6f00-8bed-11eb-8711-157e21a95543.png">
+<img width="474" alt="Screen Shot 2021-03-24 at 3 02 00 PM" src="https://user-images.githubusercontent.com/48238169/112389566-2eaba400-8cb2-11eb-9311-c4b49ba98beb.png">
+
 
 
 References:
@@ -33,3 +39,4 @@ ________________
 In addition to the Udacity course materials, I got helpful tips for creating this website from the following articles and resources:
 . https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox#the_two_axes_of_flexbox
 . https://htmlcolorcodes.com/ helped me pick my color palette.
+. https://www.w3schools.com/ for more information.
