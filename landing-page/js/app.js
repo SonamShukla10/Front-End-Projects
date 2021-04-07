@@ -37,7 +37,7 @@ const ulElement = document.querySelector("#navbar__list");
    let observer = new IntersectionObserver((entries, observer) => {
      entries.forEach((entry) => {
        if (entry.isIntersecting) {
-         sectionEle.forEach((section) => {
+         sectionElement.forEach((section) => {
            if (section.id === entry.target.id) {
              section.classList.add("section__highlight");
               for (const links of navLinks) {
