@@ -22,6 +22,15 @@ html {
   }
 }
 
+.landing__container {
+  position: relative;
+    top: 20%;
+    width: 50%;
+    background-color: cyan;
+    height: 30px;
+    opacity: 0.6;
+}
+
 
 
 
