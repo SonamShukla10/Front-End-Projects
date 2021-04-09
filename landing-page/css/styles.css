@@ -14,6 +14,7 @@ html {
   box-sizing: border-box;
   font: 96% "Merriweather", serif;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -39,6 +40,7 @@ body {
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
+    overflow-anchor: auto;
 }
 
 
@@ -80,8 +82,18 @@ main {
 
 section {
     position: relative;
-    min-height: 40vh;
+    min-height: 80vh;
 }
+
+/* .navbar__menu ul.hide {
+  display: none;
+}
+
+.navbar__menu .menu__link--your-active-class {
+  background: #333;
+  color: #cc1;
+  transition: ease 0.3s all;
+} */
 
 
 /* ---- Module Rules ---- */
@@ -96,11 +108,9 @@ section {
     flex-wrap: wrap;
     transition: all 0.8s linear;
 }
-.navbar__menu ul.hide {
-  display: none;
-}
+
 .navbar__menu li {
-    display: inline-block;
+    display:inline-block;
 }
 
 .navbar__menu .menu__link {
@@ -117,6 +127,18 @@ section {
   background-color: #cc1;
 }
 
+.menu__link {
+    display: block;
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #001833;
+    border-left: 2px solid whitesmoke;
+}
+
+
+
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
@@ -129,7 +151,16 @@ section {
 
 .section__highlight {
   background: #b0a068;
+  border-radius: 35px;
+  padding: 0px 20px;
+  line-height: 50px;
 }
+
+.section-highlight : your-active-class {
+border-radius: 22px;
+position: sticky;
+}
+
 
 /* Header Styles */
 .page__header {
@@ -137,6 +168,7 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
+    box-shadow: 0 3px 5px #001833;
     z-index: 5;
 }
 
@@ -151,6 +183,22 @@ section {
     color: #fff;
 }
 
+/* .bottom__link {
+  position: fixed;
+  bottom: 2em;
+  right: 8em;
+  z-index: 10;
+  text-align: right;
+  color: #333;
+  text-decoration: none;
+  background: #cc1;
+  padding: 1em;
+  border-radius: 50%;
+}
+
+.bottom__link.hide {
+  display: none;
+} */
 
 
 /* ---- Theme Rules ---- */
@@ -158,6 +206,7 @@ section {
 .landing__container {
     padding: 1em;
     text-align: left;
+    overflow-anchor: auto;
 }
 
 @media only screen and (min-width: 35em){
@@ -249,18 +298,18 @@ section .active {
 
 
 
-section.your-active-class {
+/* section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-}
+} */
 
 
-section.your-active-class .landing__container::before {
+section .your-active-class.landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section .your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
