@@ -26,11 +26,7 @@ const ulElement = document.querySelector("#navbar__list");
  *
  */
 
-/**
- * End Helper Functions
- * Begin Main Functions
- *
- */
+
  const navLinks = document.querySelectorAll("a");
 
  if (!!window.IntersectionObserver) {
@@ -60,8 +56,11 @@ const ulElement = document.querySelector("#navbar__list");
  }
 
 
-
-
+ /**
+  * End Helper Functions
+  * Begin Main Functions
+  *
+  */
 
  for (const sectiondata of sectionElement) {
 
@@ -78,11 +77,15 @@ const ulElement = document.querySelector("#navbar__list");
    liElement.addEventListener("click", (event) => {
      event.preventDefault();
      sectiondata.scrollIntoView({
+       easing: "linear",
+       duration: 2000,
        behavior: "smooth",
+       block: "start",
      });
    });
  }
-// build the nav
+
+
 
 
 // Top button variable
@@ -90,12 +93,14 @@ const topBtn = document.querySelector(".top-btn");
 
 // Function to display button on scrolling
 window.onscroll = function () {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop >= 0 || document.documentElement.scrollTop >= 0) {
     topBtn.style.display = "block";
   } else {
     topBtn.style.display = "none";
   }
 };
+
+
 
 // Event Listener of top button which scroll's to the top smoothly
 topBtn.addEventListener("click", function () {
@@ -103,5 +108,6 @@ topBtn.addEventListener("click", function () {
     top: 0,
     left: 0,
     behavior: "smooth",
+    block: "start",
   });
 });
