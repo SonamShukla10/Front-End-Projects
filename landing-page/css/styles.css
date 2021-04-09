@@ -22,15 +22,14 @@ html {
   }
 }
 
-.landing__container {
+/* .landing__container {
   position: relative;
     top: 20%;
     width: 50%;
     background-color: cyan;
     height: 30px;
     opacity: 0.6;
-}
-
+} */
 
 
 
@@ -81,7 +80,7 @@ main {
 
 section {
     position: relative;
-    min-height: 80vh;
+    min-height: 40vh;
 }
 
 
@@ -91,9 +90,15 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align:justify;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transition: all 0.8s linear;
 }
-
+.navbar__menu ul.hide {
+  display: none;
+}
 .navbar__menu li {
     display: inline-block;
 }
@@ -102,14 +107,28 @@ section {
     display: block;
     padding: 1em;
     font-weight: bold;
+    font-size: 1.1em;
     text-decoration: none;
     color: #000;
+}
+
+
+.menu__link a {
+  background-color: #cc1;
 }
 
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+.nav__highlight {
+  background-color: teal;
+}
+
+.section__highlight {
+  background: #b0a068;
 }
 
 /* Header Styles */
@@ -131,6 +150,7 @@ section {
 .page__footer p{
     color: #fff;
 }
+
 
 
 /* ---- Theme Rules ---- */
@@ -169,7 +189,7 @@ section:nth-of-type(odd) .landing__container::before {
 }
 
 section:nth-of-type(even) .landing__container::before {
-    content: '';
+    content: "";
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
     position: absolute;
@@ -217,10 +237,23 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+
+section .active {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+
+
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
+
 
 section.your-active-class .landing__container::before {
     opacity: 1;
