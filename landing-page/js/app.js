@@ -27,7 +27,7 @@ const ulElement = document.querySelector("#navbar__list");
  */
 
 
- const navLinks = document.querySelectorAll(".your-active-class");
+ const navLinks = document.querySelectorAll(".active");
 
  if (!!window.IntersectionObserver) {
    let observer = new IntersectionObserver((entries, observer) => {
