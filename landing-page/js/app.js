@@ -27,7 +27,7 @@ const ulElement = document.querySelector("#navbar__list");
  */
 
 
- const navLinks = document.querySelectorAll("a");
+ const navLinks = document.querySelectorAll(".your-active-class");
 
  if (!!window.IntersectionObserver) {
    let observer = new IntersectionObserver((entries, observer) => {
@@ -35,7 +35,7 @@ const ulElement = document.querySelector("#navbar__list");
        if (entry.isIntersecting) {
          sectionElement.forEach((section) => {
            if (section.id === entry.target.id) {
-             section.classList.add("section__highlight");
+             section.classList.add("your-active-class");
               for (const links of navLinks) {
                if (links.id === entry.target.id) {
                  links.classList.add("nav__highlight");
@@ -44,7 +44,7 @@ const ulElement = document.querySelector("#navbar__list");
                }
              }
            } else {
-             section.classList.remove("section__highlight");
+             section.classList.remove("your-active-class");
            }
          });
        }
