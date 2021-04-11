@@ -85,7 +85,7 @@ section {
     min-height: 80vh;
 }
 
-/* .navbar__menu ul.hide {
+.navbar__menu ul.hide {
   display: none;
 }
 
@@ -93,7 +93,7 @@ section {
   background: #333;
   color: #cc1;
   transition: ease 0.3s all;
-} */
+}
 
 
 /* ---- Module Rules ---- */
@@ -149,7 +149,7 @@ section {
   background-color: teal;
 }
 
-.section__highlight {
+.your-active-class {
   background: #b0a068;
   border-radius: 35px;
   padding: 0px 20px;
@@ -304,7 +304,7 @@ section .active {
 } */
 
 
-section .your-active-class.landing__container::before {
+section .your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
