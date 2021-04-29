@@ -11,7 +11,7 @@ If you are interested in testing your code as you go, you can use `tests.js` as 
 
 
 ## To install express :: 
-npm install express on console
+npm install express 
 
 ## To run ::
 node server.js
