@@ -24,11 +24,13 @@ app.use(express.static('website'));
 
 
   // Create a GET route
-  app.get('/get', (req, res) => {
+  app.get('/getData', (req, res) => {
       // returns the object named projectData
       res.send(projectData);
-      console.log(projectData);
+      console.log('projectData');
   });
+
+
 
   app.get('/all', (req, res) => {
     res.send(projectData);
@@ -44,6 +46,8 @@ app.post('/addWeather', (req, res) => {
         date: req.body.date,
         feelings : req.body.feelings
     }
+
+
 
     app.post('/add', (req, res) => {
       console.log(res.body);
