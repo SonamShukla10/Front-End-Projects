@@ -21,39 +21,44 @@ app.use(express.static('website'));
 
 
 
-// Setup Server
-const port = 8800;
-app.listen(port, () => {
-    console.log('server running');
-    console.log(`running on localhost ${port}`);
-});
 
 
   // Create a GET route
-  app.get('/get', (rrequest, response) => {
+  app.get('/get', (req, res) => {
       // returns the object named projectData
-      response.send(projectData);
+      res.send(projectData);
       console.log(projectData);
   });
 
-  app.get('/all', (request, response) => {
-    response.send(projectData);
+  app.get('/all', (req, res) => {
+    res.send(projectData);
     console.log(projectData);
 });
 
 
 // Create a POST route
-app.post('/add', (request, response) => {
+app.post('/addWeather', (req, res) => {
     entry = {
-        location: request.body.location,
-        temp: request.body.temp,
-        date: request.body.date,
-        feelings: request.body.feelings,
-        content:  request.body.content
+      location : req.body.location;
+        temp: req.body.temp,
+        date: req.body.date,
+        feelings : req.body.feelings
     }
 
-    
+    app.post('/add', (req, res) => {
+      console.log(res.body);
+      res.send("Thanks for info!");
+    });
+
+
     projectData = entry
     console.log(projectData)
     res.send(projectData)
+});
+
+// Setup Server
+const port = 8800;
+app.listen(port, () => {
+    console.log('server running');
+    console.log(`running on localhost ${port}`);
 });
