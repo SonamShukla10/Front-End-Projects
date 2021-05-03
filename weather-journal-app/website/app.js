@@ -1,5 +1,5 @@
 /* Global Variables */
- let baseUrl ='api.openweathermap.org/data/2.5/weather?q=';
+ let baseUrl ='http://api.openweathermap.org/data/2.5/weather?q=';
  // 'http://api.openweathermap.org/data/2.5/weather?newWeather=';
 let apiKey = 'Sonam&appid=29ffe73e4218f0e4dce19128713ad41d';
 
@@ -17,7 +17,7 @@ const feelings = document.getElementById('feelings');
 getWeather(baseUrl ,newWeather , apiKey )
 .then (function(data) {
     console.log(data);
-    postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feeling:feeling})
+    postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings})
     //{`${baseUrl}newWeather=${weather}&appid=${apiKey}`} )
   })
   .then(
