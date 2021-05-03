@@ -10,14 +10,14 @@ let newDate =  d.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 
 
 document.getElementById('generate').addEventListener('click', performAction);
 
-function performAction(e){
+function performAction(event){
 const newWeather =  document.getElementById('weather');
 const feelings = document.getElementById('feelings');
 
 getWeather(baseUrl ,newWeather , apiKey )
 .then (function(data) {
     console.log(data);
-    postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings})
+    postData('/addWeather' ,{temp:data.list[0].main.temp ,date:newDate, feelings:feelings})
     //{`${baseUrl}newWeather=${weather}&appid=${apiKey}`} )
   })
   .then(
@@ -49,36 +49,39 @@ const getWeather = async (baseUrl, newWeather, key)=>{
 
 
 // ######################################################
-const postData = async ( url = '', data = {})=>{
+const postData = async (url = '', data = {}) => {
+    const res = await fetch(url, {
+        //boilerplate
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        //Body data type must match Content-Type
+        body: JSON.stringify(data),
+});
 
-      const response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      credentials: 'same-origin',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-
-      try {
-        const newData = await response.json();
-               return newData
-      }catch(error) {
-      console.log("error", error);     // error handling
-      }
-  }
+try {
+      const newData = await res.json();
+      console.log(newData);
+      return newData;
+  } catch(error) {
+      console.log('error', error);
+  };
+}
 
 
 // ########################################################
-const newData = async (url='') =>{
-    const req = await fetch(url);
+const getData = async (url='') =>{
+    const request = await fetch(url);
     try {
-        const newData = await req.json()
+        const getData = await request.json()
     }
     catch(error){
         console.log('error', error);
     }
 };
+
 
 
 function tempConversion(kelvin) {
@@ -92,9 +95,9 @@ const updateInfo = async (url = '') => {
     const req = await fetch('/all');
     try {
         const fullData = await req.json();
-        document.getElementById('date').innerHTML = fullData.date;
+        document.getElementById('date').innerHTML = `Date: ${fullData.date}`;
         document.getElementById('temp').innerHTML = tempConversion(fullData.temp);
-        document.getElementById('content').innerHTML = `Your feeling: ${fullData.feelings}`;
+        document.getElementById('feelings').innerHTML = `Your feeling: ${fullData.feelings}`;
         document.getElementById('location').innerHTML = fullData.location;
         console.log(fullData)
     } catch(error) {
