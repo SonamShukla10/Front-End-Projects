@@ -11,7 +11,7 @@ let newDate =  d.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(event){
-const newWeather =  document.getElementById('weather');
+const newWeather =  document.getElementById('zip');
 const feelings = document.getElementById('feelings');
 
 getWeather(baseUrl ,newWeather , apiKey )
