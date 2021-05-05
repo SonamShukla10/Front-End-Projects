@@ -1,7 +1,9 @@
 /* Global Variables */
- let baseUrl ='http://api.openweathermap.org/data/2.5/weather?q=';
+ //let baseUrl ='http://api.openweathermap.org/data/2.5/weather?q=';
  // 'http://api.openweathermap.org/data/2.5/weather?newWeather=';
-let apiKey = 'Sonam&appid=29ffe73e4218f0e4dce19128713ad41d';
+//let apiKey = 'Sonam&appid=29ffe73e4218f0e4dce19128713ad41d';
+let apiKey = '29ffe73e4218f0e4dce19128713ad41d';
+let baseUrl = 'http://api.openweathermap.org/data/2.5/weather?q=97124,us&appid={apiKey}';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -11,13 +13,13 @@ let newDate =  d.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(event){
-const newWeather =  document.getElementById('zip');
-const feelings = document.getElementById('feelings');
+const newWeather =  document.getElementById('zip').value;
+const feelings = document.getElementById('feelings').value;
 
-getWeather(baseUrl ,newWeather , apiKey )
+getWeather(baseUrl ,newWeather, apiKey )
 .then (function(data) {
     console.log(data);
-    postData('/addWeather' ,{temp:data.list[0].main.temp ,date:newDate, feelings:feelings})
+  //  postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings})
     //{`${baseUrl}newWeather=${weather}&appid=${apiKey}`} )
   })
   .then(
