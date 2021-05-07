@@ -13,6 +13,10 @@ If you are interested in testing your code as you go, you can use `tests.js` as 
 ## To install express :: 
 npm install express 
 
+## To install node_module ::
+rm -rf node_modules
+npm install
+
 ## To run ::
 node server.js
 
