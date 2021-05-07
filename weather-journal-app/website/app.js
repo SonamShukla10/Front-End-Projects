@@ -1,9 +1,8 @@
 /* Global Variables */
- //let baseUrl ='http://api.openweathermap.org/data/2.5/weather?q=';
- // 'http://api.openweathermap.org/data/2.5/weather?newWeather=';
-//let apiKey = 'Sonam&appid=29ffe73e4218f0e4dce19128713ad41d';
-let apiKey = '29ffe73e4218f0e4dce19128713ad41d';
-let baseUrl = 'http://api.openweathermap.org/data/2.5/weather?q=97124,us&appid={apiKey}';
+const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+const apiKey = '&units=base&appid=29ffe73e4218f0e4dce19128713ad41d';
+
+
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -19,8 +18,8 @@ const feelings = document.getElementById('feelings').value;
 getWeather(baseUrl ,newWeather, apiKey )
 .then (function(data) {
     console.log(data);
-  //  postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings})
-    //{`${baseUrl}newWeather=${weather}&appid=${apiKey}`} )
+    postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings, location: data.main.location})
+    
   })
   .then(
       updateInfo()
@@ -97,7 +96,7 @@ const updateInfo = async (url = '') => {
     const req = await fetch('/all');
     try {
         const fullData = await req.json();
-        document.getElementById('date').innerHTML = `Date: ${fullData.date}`;
+        document.getElementById('date').innerHTML = fullData.date;
         document.getElementById('temp').innerHTML = tempConversion(fullData.temp);
         document.getElementById('feelings').innerHTML = `Your feeling: ${fullData.feelings}`;
         document.getElementById('location').innerHTML = fullData.location;
@@ -107,3 +106,4 @@ const updateInfo = async (url = '') => {
     }
   }
 // ########################################################
+
