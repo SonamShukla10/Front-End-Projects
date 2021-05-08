@@ -29,12 +29,6 @@ app.listen(port, () => {
 });
 
 
-  // Create a GET route
-  app.get('/getData', (req, res) => {
-      // returns the object named projectData
-      res.send(projectData);
-      console.log('projectData');
-  });
 
 
 
@@ -52,9 +46,6 @@ app.post('/addWeather', (req, res) => {
         date: req.body.date,
         feelings : req.body.feelings
     }
-
-
-
 
     projectData = entry
     console.log(projectData)
