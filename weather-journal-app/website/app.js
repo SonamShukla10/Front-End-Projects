@@ -1,6 +1,7 @@
 /* Global Variables */
+
 const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '&units=base&appid=29ffe73e4218f0e4dce19128713ad41d';
+const apiKey = '&units=metric&appid=29ffe73e4218f0e4dce19128713ad41d';
 
 
 
@@ -18,10 +19,10 @@ const feelings = document.getElementById('feelings').value;
 getWeather(baseUrl ,newWeather, apiKey )
 .then (function(data) {
     console.log(data);
-    postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings, location: data.main.location})
-    
+    postData('/addWeather' ,{temp:data.main.temp ,date:newDate, feelings:feelings, location: data.name})
+    //{`${baseUrl}newWeather=${weather}&appid=${apiKey}`} )
   })
-  .then(
+  .then(() =>
       updateInfo()
     )
 
@@ -35,12 +36,6 @@ const getWeather = async (baseUrl, newWeather, key)=>{
     const data = await res.json();
     console.log(data)
     return data;
-    postData('/add', {
-      location : data.main.location,
-      temp: data.main.temp,
-      date: newDate(),
-      feelings: data.main.feelings,
-        })
     }
     catch(error) {
       console.log("error", error);
@@ -85,20 +80,15 @@ const getData = async (url='') =>{
 
 
 
-function tempConversion(kelvin) {
-    let celsius = Math.floor(kelvin - 273)
-    return `${celsius}°C`
-}
-
-
 
 const updateInfo = async (url = '') => {
     const req = await fetch('/all');
     try {
         const fullData = await req.json();
         document.getElementById('date').innerHTML = fullData.date;
-        document.getElementById('temp').innerHTML = tempConversion(fullData.temp);
-        document.getElementById('feelings').innerHTML = `Your feeling: ${fullData.feelings}`;
+        document.getElementById('temp').innerHTML = fullData.temp;
+        //document.getElementById('feelings').innerHTML = `Your feeling: ${fullData.feelings}`;
+        document.getElementById('content').innerHTML = `Your feeling: ${fullData.feelings}`;
         document.getElementById('location').innerHTML = fullData.location;
         console.log(fullData)
     } catch(error) {
