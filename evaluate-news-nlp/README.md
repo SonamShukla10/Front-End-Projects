@@ -27,10 +27,15 @@ Install loaders and plugins
   Choose the necessary installation for your development mode : 
 -----------------------------------------------------------------
 npm i -D @babel/core @babel/preset-env babel-loader
+  
 npm i -D style-loader node-sass css-loader sass-loader
+  
 npm i -D clean-webpack-plugin
+  
 npm i -D html-webpack-plugin
+  
 npm i -D mini-css-extract-plugin
+  
 npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
 Configure environment variables using dotenv package
@@ -42,8 +47,11 @@ To install node_module :
 Install the dotenv package :
   ---------------------------------
 npm install dotenv
+  
 Create a new .env file in the root of your project
+  
 Fill the .env file with your API key like this:
+  ----------------------------------------------
 API_KEY=*************************
 Start the project
 
