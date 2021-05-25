@@ -39,7 +39,11 @@ Fill the .env file with your API key like this:
 API_KEY=*************************
 Start the project
 
-Command	Action
-npm run build-prod	Build project
-npm start	Run project
+Build	Project :
+-------------------
+npm run build-prod	
+  
+Run project :
+---------------
+npm start	
 
