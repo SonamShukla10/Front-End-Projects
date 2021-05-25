@@ -7,13 +7,21 @@ Install :
 -----------
 
 node -v
+
 npm -v
-Move to the project folder
+
+Move to the project folder:
+-------------------------
 cd <project directory>
-Clone the repo
+  
+Clone the repo :
+------------------  
 git clone <repo>
-Install npm
+  
+Install npm :
+-------------
 npm install
+  
 Install loaders and plugins
   
   Choose the necessary installation for your development mode : 
