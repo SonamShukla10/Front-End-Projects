@@ -55,9 +55,10 @@ Fill the .env file with your API key like this:
 API_KEY=*************************
 Start the project
 
-Build	Project :
--------------------
-npm run build-prod	
+Build the Project 
+  
+  Start the Server
+  
   
 Run project :
 ---------------
