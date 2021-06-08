@@ -16,6 +16,7 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 const app = express()
 const cors = require('cors');
 app.use(cors());
+app.options('*', cors())
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
@@ -40,15 +41,24 @@ const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`);
 });
 
+
+
+
 app.post('/api', async function(req, res) {
     userInput = req.body.url;
     console.log(`You entered: ${userInput}`);
     const apiURL = `${baseURL}key=${apiKey}&url=${userInput}&lang=en`
 
+
+    app.get('/getApi', function(req, res) {
+        let mcdata = process.env.API_KEY;
+        res.send({ mcdata });
+    });
+
     const response = await fetch(apiURL)
-    const mcData = await response.json()
-    console.log(mcData)
-    res.send(mcData)
+    const mcdata = await request.json();
+    console.log(mcdata)
+    res.send(mcdata)
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
