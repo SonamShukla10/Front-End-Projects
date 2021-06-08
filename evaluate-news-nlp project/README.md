@@ -65,6 +65,6 @@ Run project :
 npm start	
 
 
-On Console : (IF GOt Some Error Related to Navigation) 
+On Console : (IF Got Some Error Related to Navigation) 
 ----------------------------------------------------
   navigator.serviceWorker.getRegistrations().then(function(registrations) { for(let registration of registrations) { registration.unregister() } })
