@@ -35,4 +35,4 @@ Start the project
 Command	Action
 npm run build-prod	Build project
 npm start	Run project
-Open browser at http://localhost:8000/
+Open browser at http://localhost:8000/ 
